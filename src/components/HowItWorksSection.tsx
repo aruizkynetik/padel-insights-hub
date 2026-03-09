@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { Paperclip, Play, Database, BarChart } from "lucide-react";
 
 const steps = [
-  { icon: Paperclip, step: "01", title: "Attach", desc: "Clip PadelSense to the base of your racket." },
-  { icon: Play, step: "02", title: "Play", desc: "Play your game normally — no distractions." },
-  { icon: Database, step: "03", title: "Record", desc: "Every shot is captured with precision sensors." },
-  { icon: BarChart, step: "04", title: "Analyze", desc: "Review your data in the companion app." },
+  { icon: Paperclip, step: "01", title: "Acopla", desc: "Fija PadelSense a la base de tu pala." },
+  { icon: Play, step: "02", title: "Juega", desc: "Juega con normalidad — sin distracciones." },
+  { icon: Database, step: "03", title: "Registra", desc: "Cada golpe se captura con sensores de precisión." },
+  { icon: BarChart, step: "04", title: "Analiza", desc: "Revisa tus datos en la app complementaria." },
 ];
 
 const HowItWorksSection = () => (
@@ -18,9 +18,9 @@ const HowItWorksSection = () => (
         transition={{ duration: 0.6 }}
         className="text-center max-w-2xl mx-auto mb-16"
       >
-        <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-3">How It Works</p>
+        <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-3">Cómo Funciona</p>
         <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
-          Simple as 1-2-3-4
+          Simple como 1-2-3-4
         </h2>
       </motion.div>
 

@@ -16,22 +16,22 @@ const HeroSection = () => (
         transition={{ duration: 0.8 }}
       >
         <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-4">
-          Next-Gen Padel Technology
+          Tecnología Deportiva de Nueva Generación
         </p>
         <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-6">
-          Unlock Your{" "}
-          <span className="gradient-text">Full Potential</span>{" "}
-          on the Court
+          Desbloquea Tu{" "}
+          <span className="gradient-text">Máximo Potencial</span>{" "}
+          en la Pista
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-lg mb-8">
-          The smart sensor that attaches to your padel racket and turns every shot into actionable data. Train smarter. Play better.
+          Sensores inteligentes que se acoplan a tu pala de pádel y convierten cada golpe en datos accionables. Entrena mejor. Juega más inteligente.
         </p>
         <div className="flex flex-wrap gap-4">
           <Button variant="hero" size="lg" asChild>
-            <a href="#early-access">Join Early Access</a>
+            <a href="#early-access">Acceso Anticipado</a>
           </Button>
           <Button variant="heroOutline" size="lg" asChild>
-            <a href="#solution">Learn More</a>
+            <a href="#productos">Descubre Más</a>
           </Button>
         </div>
       </motion.div>
@@ -44,7 +44,7 @@ const HeroSection = () => (
       >
         <img
           src={heroImage}
-          alt="PadelSense smart sensor attached to a padel racket"
+          alt="Sensor inteligente PadelSense acoplado a una pala de pádel"
           className="w-full rounded-2xl animate-float"
         />
       </motion.div>

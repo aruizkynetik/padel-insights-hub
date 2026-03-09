@@ -4,18 +4,18 @@ import { Users, GraduationCap, TrendingUp } from "lucide-react";
 const benefits = [
   {
     icon: Users,
-    title: "For Players",
-    items: ["Improve faster with real data", "Track progress over weeks and months", "Identify and fix weaknesses"],
+    title: "Para Jugadores",
+    items: ["Mejora más rápido con datos reales", "Sigue tu progreso semana a semana", "Identifica y corrige debilidades"],
   },
   {
     icon: GraduationCap,
-    title: "For Coaches",
-    items: ["Objective analysis of student performance", "Data-backed training plans", "Monitor multiple players at once"],
+    title: "Para Entrenadores",
+    items: ["Análisis objetivo del rendimiento", "Planes de entrenamiento basados en datos", "Monitoriza múltiples jugadores"],
   },
   {
     icon: TrendingUp,
-    title: "Data-Driven Growth",
-    items: ["Set measurable goals", "Compare sessions and matches", "Understand patterns in your game"],
+    title: "Crecimiento Basado en Datos",
+    items: ["Establece objetivos medibles", "Compara sesiones y partidos", "Entiende los patrones de tu juego"],
   },
 ];
 
@@ -29,9 +29,9 @@ const BenefitsSection = () => (
         transition={{ duration: 0.6 }}
         className="text-center max-w-2xl mx-auto mb-16"
       >
-        <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-3">Benefits</p>
+        <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-3">Beneficios</p>
         <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
-          Built for Everyone on the Court
+          Diseñado para Todos en la Pista
         </h2>
       </motion.div>
 

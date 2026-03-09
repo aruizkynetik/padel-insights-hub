@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
 
 const specRows = [
-  { label: "Weight", value: "8 grams" },
-  { label: "Dimensions", value: "32 × 24 × 10 mm" },
-  { label: "Connectivity", value: "Bluetooth 5.3 LE" },
-  { label: "Battery", value: "Rechargeable Li-Po, 20+ hours" },
-  { label: "Charging", value: "USB-C, 1hr full charge" },
-  { label: "Sensors", value: "9-axis IMU (accelerometer, gyroscope, magnetometer)" },
-  { label: "Water Resistance", value: "IP67" },
-  { label: "Compatibility", value: "All standard padel rackets" },
-  { label: "App Support", value: "iOS 15+ / Android 12+" },
+  { label: "Peso", value: "8 gramos" },
+  { label: "Dimensiones", value: "32 × 24 × 10 mm" },
+  { label: "Conectividad", value: "Bluetooth 5.3 LE" },
+  { label: "Batería", value: "Li-Po recargable, 20+ horas" },
+  { label: "Carga", value: "USB-C, 1h carga completa" },
+  { label: "Sensores", value: "IMU 9 ejes (acelerómetro, giroscopio, magnetómetro)" },
+  { label: "Resistencia al Agua", value: "IP67" },
+  { label: "Compatibilidad", value: "Todas las palas de pádel estándar" },
+  { label: "Soporte de App", value: "iOS 15+ / Android 12+" },
 ];
 
 const TechSpecsSection = () => (
@@ -22,9 +22,9 @@ const TechSpecsSection = () => (
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-3">Tech Specs</p>
+        <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-3">Especificaciones</p>
         <h2 className="font-display text-3xl md:text-5xl font-bold">
-          Under the Hood
+          Bajo el Capó
         </h2>
       </motion.div>
 

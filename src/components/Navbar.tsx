@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Problem", href: "#problem" },
-  { label: "Solution", href: "#solution" },
-  { label: "Features", href: "#features" },
+  { label: "Productos", href: "#productos" },
+  { label: "Subscripciones", href: "#subscripciones" },
   { label: "App", href: "#app" },
-  { label: "Specs", href: "#specs" },
+  { label: "Conócenos", href: "#conocenos" },
+  { label: "Soporte", href: "#soporte" },
 ];
 
 const Navbar = () => {
@@ -22,7 +22,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-16">
         <a href="#" className="font-display text-xl font-bold tracking-tight text-foreground">
-          PADEL<span className="text-primary">SENSE</span>
+          KYNE<span className="text-primary">TIK</span>
         </a>
 
         {/* Desktop */}
@@ -40,7 +40,7 @@ const Navbar = () => {
             href="#early-access"
             className="text-sm font-semibold bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors"
           >
-            Join Early Access
+            Acceso Anticipado
           </a>
         </div>
 
@@ -72,7 +72,7 @@ const Navbar = () => {
             onClick={() => setOpen(false)}
             className="text-sm font-semibold bg-primary text-primary-foreground px-4 py-2 rounded-lg text-center"
           >
-            Join Early Access
+            Acceso Anticipado
           </a>
         </motion.div>
       )}

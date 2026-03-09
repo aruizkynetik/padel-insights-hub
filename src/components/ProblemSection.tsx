@@ -4,18 +4,18 @@ import { Eye, TrendingUp, Target } from "lucide-react";
 const problems = [
   {
     icon: Eye,
-    title: "No Objective Data",
-    description: "Players rely on gut feeling instead of measurable performance metrics to evaluate their game.",
+    title: "Sin Datos Objetivos",
+    description: "Los jugadores se basan en sensaciones en lugar de métricas medibles para evaluar su juego.",
   },
   {
     icon: TrendingUp,
-    title: "Hard to Track Progress",
-    description: "Without data, it's nearly impossible to see incremental improvements or identify weaknesses.",
+    title: "Difícil Medir el Progreso",
+    description: "Sin datos, es casi imposible ver mejoras incrementales o identificar debilidades.",
   },
   {
     icon: Target,
-    title: "Coaching Blind Spots",
-    description: "Coaches depend on visual observation alone, missing subtle patterns in technique and consistency.",
+    title: "Puntos Ciegos del Entrenador",
+    description: "Los entrenadores dependen solo de la observación visual, perdiendo patrones sutiles en técnica y consistencia.",
   },
 ];
 
@@ -29,12 +29,12 @@ const ProblemSection = () => (
         transition={{ duration: 0.6 }}
         className="text-center max-w-2xl mx-auto mb-16"
       >
-        <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-3">The Problem</p>
+        <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-3">El Problema</p>
         <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
-          Padel Training Is Flying Blind
+          El Entrenamiento de Pádel Va a Ciegas
         </h2>
         <p className="text-muted-foreground text-lg">
-          Most padel players have zero insight into what's actually happening with their shots.
+          La mayoría de jugadores de pádel no tienen visibilidad sobre lo que realmente pasa con sus golpes.
         </p>
       </motion.div>
 
