@@ -13,7 +13,7 @@ const AppPreviewSection = () => (
       >
         <img
           src={appPreview}
-          alt="PadelSense companion mobile app showing performance dashboard"
+          alt="App complementaria de Kynetik mostrando el dashboard de rendimiento"
           className="w-full max-w-sm mx-auto rounded-2xl"
         />
       </motion.div>
@@ -25,19 +25,19 @@ const AppPreviewSection = () => (
         transition={{ duration: 0.6 }}
         className="order-1 lg:order-2"
       >
-        <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-3">Companion App</p>
+        <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-3">App Complementaria</p>
         <h2 className="font-display text-3xl md:text-5xl font-bold mb-6">
-          Your Game, <span className="gradient-text">Visualized</span>
+          Tu Juego, <span className="gradient-text">Visualizado</span>
         </h2>
         <p className="text-muted-foreground text-lg mb-8">
-          The PadelSense app transforms raw sensor data into beautiful, actionable insights.
+          La app de Kynetik transforma los datos del sensor en información visual y accionable.
         </p>
         <div className="space-y-4">
           {[
-            "Performance dashboard with real-time stats",
-            "Session-by-session analytics",
-            "Progress tracking with historical trends",
-            "Detailed graphs for power, spin, and accuracy",
+            "Dashboard de rendimiento con estadísticas en tiempo real",
+            "Analítica sesión a sesión",
+            "Seguimiento de progreso con tendencias históricas",
+            "Gráficos detallados de potencia, efecto y precisión",
           ].map((item) => (
             <div key={item} className="flex items-center gap-3">
               <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />

@@ -4,23 +4,23 @@ import { Zap, BarChart3, Smartphone } from "lucide-react";
 const solutions = [
   {
     icon: Zap,
-    title: "Attach & Forget",
-    description: "Clip the sensor onto any padel racket in seconds. It's so lightweight you won't even notice it.",
+    title: "Acopla y Olvídate",
+    description: "Fija el sensor a cualquier pala de pádel en segundos. Es tan ligero que no lo notarás.",
   },
   {
     icon: BarChart3,
-    title: "Auto-Track Everything",
-    description: "Every shot is captured automatically — power, spin, impact position, and timing.",
+    title: "Registro Automático",
+    description: "Cada golpe se captura automáticamente — potencia, efecto, posición de impacto y timing.",
   },
   {
     icon: Smartphone,
-    title: "Instant Analytics",
-    description: "Open the app after your session and see exactly how you performed with detailed breakdowns.",
+    title: "Analítica Instantánea",
+    description: "Abre la app tras tu sesión y ve exactamente cómo has rendido con desgloses detallados.",
   },
 ];
 
 const SolutionSection = () => (
-  <section id="solution" className="section-padding bg-card/50">
+  <section id="productos" className="section-padding bg-card/50">
     <div className="max-w-7xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -29,12 +29,12 @@ const SolutionSection = () => (
         transition={{ duration: 0.6 }}
         className="text-center max-w-2xl mx-auto mb-16"
       >
-        <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-3">The Solution</p>
+        <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-3">PadelSense</p>
         <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
-          Data-Driven Padel, <span className="gradient-text">Finally</span>
+          Pádel Basado en Datos, <span className="gradient-text">Por Fin</span>
         </h2>
         <p className="text-muted-foreground text-lg">
-          PadelSense bridges the gap between feel and facts, giving you clarity on every aspect of your game.
+          PadelSense cierra la brecha entre la intuición y los hechos, dándote claridad sobre cada aspecto de tu juego.
         </p>
       </motion.div>
 

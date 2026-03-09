@@ -3,11 +3,11 @@ import { Feather, Shield, Plug, BatteryFull, Wifi } from "lucide-react";
 import productImage from "@/assets/product-detail.png";
 
 const specs = [
-  { icon: Feather, label: "Lightweight", value: "Only 8 grams" },
-  { icon: Shield, label: "Durable", value: "IP67 rated" },
-  { icon: Plug, label: "Easy Mount", value: "Universal clip" },
-  { icon: BatteryFull, label: "Battery Life", value: "20+ hours" },
-  { icon: Wifi, label: "Connectivity", value: "Bluetooth 5.3" },
+  { icon: Feather, label: "Ultraligero", value: "Solo 8 gramos" },
+  { icon: Shield, label: "Resistente", value: "IP67" },
+  { icon: Plug, label: "Fácil Montaje", value: "Clip universal" },
+  { icon: BatteryFull, label: "Batería", value: "20+ horas" },
+  { icon: Wifi, label: "Conectividad", value: "Bluetooth 5.3" },
 ];
 
 const ProductDesignSection = () => (
@@ -19,12 +19,12 @@ const ProductDesignSection = () => (
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-3">Product Design</p>
+        <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-3">Diseño del Producto</p>
         <h2 className="font-display text-3xl md:text-5xl font-bold mb-6">
-          Engineered for <span className="gradient-text">Performance</span>
+          Diseñado para el <span className="gradient-text">Rendimiento</span>
         </h2>
         <p className="text-muted-foreground text-lg mb-8">
-          Designed to be invisible on your racket. Precision-engineered with aerospace-grade materials, PadelSense won't affect your swing or balance.
+          Diseñado para ser invisible en tu pala. Fabricado con materiales de grado aeroespacial, PadelSense no afecta tu swing ni tu equilibrio.
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
           {specs.map((s) => (
@@ -45,7 +45,7 @@ const ProductDesignSection = () => (
       >
         <img
           src={productImage}
-          alt="PadelSense sensor device close-up"
+          alt="Detalle del sensor PadelSense"
           className="w-full max-w-md mx-auto rounded-2xl"
         />
       </motion.div>

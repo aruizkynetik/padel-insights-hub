@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { Zap, RotateCcw, Crosshair, Hash, Activity, Smartphone } from "lucide-react";
 
 const features = [
-  { icon: Zap, title: "Shot Power Tracking", desc: "Measure the force behind every smash, volley and bandeja." },
-  { icon: RotateCcw, title: "Spin Detection", desc: "Understand your spin rates — flat, slice, or topspin." },
-  { icon: Crosshair, title: "Impact Point Analysis", desc: "See exactly where the ball hits the racket face." },
-  { icon: Hash, title: "Shot Count & Intensity", desc: "Track volume and effort across matches and training." },
-  { icon: Activity, title: "Match Analytics", desc: "Full session breakdowns with trends over time." },
-  { icon: Smartphone, title: "Mobile App Integration", desc: "All data syncs seamlessly to your phone." },
+  { icon: Zap, title: "Potencia de Golpe", desc: "Mide la fuerza detrás de cada smash, volea y bandeja." },
+  { icon: RotateCcw, title: "Detección de Efecto", desc: "Comprende tus efectos — plano, cortado o liftado." },
+  { icon: Crosshair, title: "Punto de Impacto", desc: "Visualiza exactamente dónde golpea la bola en la pala." },
+  { icon: Hash, title: "Conteo e Intensidad", desc: "Registra el volumen y esfuerzo en partidos y entrenamientos." },
+  { icon: Activity, title: "Analítica de Partidos", desc: "Desgloses completos con tendencias a lo largo del tiempo." },
+  { icon: Smartphone, title: "Integración con App", desc: "Todos los datos se sincronizan con tu móvil." },
 ];
 
 const FeaturesSection = () => (
@@ -20,9 +20,9 @@ const FeaturesSection = () => (
         transition={{ duration: 0.6 }}
         className="text-center max-w-2xl mx-auto mb-16"
       >
-        <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-3">Features</p>
+        <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-3">Características</p>
         <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
-          Everything You Need to <span className="gradient-text">Level Up</span>
+          Todo lo que Necesitas para <span className="gradient-text">Subir de Nivel</span>
         </h2>
       </motion.div>
 

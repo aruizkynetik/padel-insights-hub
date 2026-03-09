@@ -4,23 +4,23 @@ import { Building, Brain, Users } from "lucide-react";
 const items = [
   {
     icon: Building,
-    title: "Academy Partnerships",
-    desc: "Collaborating with top padel academies to integrate PadelSense into professional training programs.",
+    title: "Academias Asociadas",
+    desc: "Colaborando con las mejores academias de pádel para integrar PadelSense en programas de entrenamiento profesional.",
   },
   {
     icon: Brain,
-    title: "AI-Powered Analysis",
-    desc: "Upcoming AI features will provide personalized coaching tips and predict areas for improvement.",
+    title: "Análisis con IA",
+    desc: "Próximas funciones de IA que ofrecerán consejos personalizados y predicción de áreas de mejora.",
   },
   {
     icon: Users,
-    title: "Community Features",
-    desc: "Compare stats with friends, join challenges, and build a community of data-driven players.",
+    title: "Comunidad",
+    desc: "Compara estadísticas con amigos, participa en retos y forma parte de una comunidad de jugadores data-driven.",
   },
 ];
 
 const SocialProofSection = () => (
-  <section className="section-padding">
+  <section id="conocenos" className="section-padding">
     <div className="max-w-7xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -29,12 +29,12 @@ const SocialProofSection = () => (
         transition={{ duration: 0.6 }}
         className="text-center max-w-2xl mx-auto mb-16"
       >
-        <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-3">Vision</p>
+        <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-3">Visión</p>
         <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
-          The Future of Padel
+          El Futuro del Pádel
         </h2>
         <p className="text-muted-foreground text-lg">
-          We're building more than a sensor — we're building the ecosystem that will redefine how padel is played and coached.
+          Estamos construyendo más que un sensor — estamos creando el ecosistema que redefinirá cómo se juega y se entrena el pádel.
         </p>
       </motion.div>
 

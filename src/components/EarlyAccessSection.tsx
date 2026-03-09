@@ -10,7 +10,7 @@ const EarlyAccessSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim()) return;
-    toast.success("You're on the list! We'll be in touch soon.");
+    toast.success("¡Estás en la lista! Te contactaremos pronto.");
     setEmail("");
   };
 
@@ -23,28 +23,28 @@ const EarlyAccessSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-3">Early Access</p>
+          <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-3">Acceso Anticipado</p>
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
-            Be the First to <span className="gradient-text">Play Smarter</span>
+            Sé el Primero en <span className="gradient-text">Jugar Más Inteligente</span>
           </h2>
           <p className="text-muted-foreground text-lg mb-8">
-            Join our waitlist and get exclusive early access pricing, beta testing opportunities, and product updates.
+            Únete a nuestra lista de espera y obtén acceso anticipado con precios exclusivos, oportunidades de beta testing y actualizaciones del producto.
           </p>
 
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <Input
               type="email"
-              placeholder="Enter your email"
+              placeholder="Tu email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
               className="flex-1 bg-surface border-border h-12 text-foreground placeholder:text-muted-foreground"
             />
             <Button type="submit" variant="hero" size="lg">
-              Join Waitlist
+              Unirse
             </Button>
           </form>
-          <p className="text-muted-foreground text-xs mt-4">No spam. Unsubscribe anytime.</p>
+          <p className="text-muted-foreground text-xs mt-4">Sin spam. Cancela cuando quieras.</p>
         </motion.div>
       </div>
     </section>
