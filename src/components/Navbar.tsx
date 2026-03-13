@@ -1,14 +1,13 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, User, ShoppingBag, ChevronDown } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import kynetikLogo from "@/assets/kynetik-logo.png";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const navigate = useNavigate();
 
   const openDropdown = (name: string) => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -21,15 +20,9 @@ const Navbar = () => {
 
   useEffect(() => () => { if (timeoutRef.current) clearTimeout(timeoutRef.current); }, []);
 
-  const DropdownWrapper = ({ name, label, children }: { name: string; label: string; children: React.ReactNode }) => (
-    <div
-      className="relative"
-      onMouseEnter={() => openDropdown(name)}
-      onMouseLeave={closeDropdown}
-    >
-      <button className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors">
-        {label} <ChevronDown size={14} className={`transition-transform ${activeDropdown === name ? "rotate-180" : ""}`} />
-      </button>
+  const DropdownWrapper = ({ name, trigger, children, align = "center" }: { name: string; trigger: React.ReactNode; children: React.ReactNode; align?: "center" | "right" }) => (
+    <div className="relative" onMouseEnter={() => openDropdown(name)} onMouseLeave={closeDropdown}>
+      {trigger}
       <AnimatePresence>
         {activeDropdown === name && (
           <motion.div
@@ -37,7 +30,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 8 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full left-1/2 -translate-x-1/2 mt-3 min-w-[200px] bg-card border border-border rounded-xl shadow-xl p-3 z-50"
+            className={`absolute top-full mt-3 min-w-[200px] bg-card border border-border rounded-xl shadow-xl p-3 z-50 ${align === "right" ? "right-0" : "left-1/2 -translate-x-1/2"}`}
           >
             {children}
           </motion.div>
@@ -64,16 +57,22 @@ const Navbar = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border"
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-center px-6 h-16 gap-8">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-16">
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">
           <img src={kynetikLogo} alt="Kynetik" className="h-8 w-auto" />
         </Link>
 
-        {/* Desktop nav */}
-        <div className="hidden lg:flex items-center gap-6 flex-1 justify-center">
-          {/* Productos */}
-          <DropdownWrapper name="productos" label="Productos">
+        {/* Desktop nav - centered */}
+        <div className="hidden lg:flex items-center gap-6">
+          <DropdownWrapper
+            name="productos"
+            trigger={
+              <button className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Productos <ChevronDown size={14} className={`transition-transform ${activeDropdown === "productos" ? "rotate-180" : ""}`} />
+              </button>
+            }
+          >
             {dropdownLink("/productos/padel", "Pádel")}
             {dropdownLink("/productos/boxeo", "Boxeo")}
             {dropdownLink("/productos/proximamente", "Próximamente")}
@@ -81,8 +80,14 @@ const Navbar = () => {
 
           <Link to="/app" className="text-sm text-muted-foreground hover:text-foreground transition-colors">App</Link>
 
-          {/* Suscripción */}
-          <DropdownWrapper name="suscripcion" label="Suscripción">
+          <DropdownWrapper
+            name="suscripcion"
+            trigger={
+              <button className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Suscripción <ChevronDown size={14} className={`transition-transform ${activeDropdown === "suscripcion" ? "rotate-180" : ""}`} />
+              </button>
+            }
+          >
             {dropdownLink("/suscripcion/padel", "Pádel")}
             {dropdownLink("/suscripcion/boxeo", "Boxeo")}
           </DropdownWrapper>
@@ -93,9 +98,17 @@ const Navbar = () => {
         </div>
 
         {/* User & Cart icons */}
-        <div className="hidden lg:flex items-center gap-2">
+        <div className="hidden lg:flex items-center gap-1">
           {/* User dropdown */}
-          <DropdownWrapper name="user" label="">
+          <DropdownWrapper
+            name="user"
+            align="right"
+            trigger={
+              <button className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted">
+                <User size={20} />
+              </button>
+            }
+          >
             <div className="w-[280px] p-2">
               <h3 className="font-display text-sm font-semibold text-foreground mb-3 px-2">Iniciar Sesión</h3>
               <input
@@ -131,7 +144,15 @@ const Navbar = () => {
           </DropdownWrapper>
 
           {/* Cart dropdown */}
-          <DropdownWrapper name="cart" label="">
+          <DropdownWrapper
+            name="cart"
+            align="right"
+            trigger={
+              <button className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted">
+                <ShoppingBag size={20} />
+              </button>
+            }
+          >
             <div className="w-[280px] p-2">
               <h3 className="font-display text-sm font-semibold text-foreground mb-3 px-2">Carrito</h3>
               <p className="text-sm text-muted-foreground text-center py-6">Tu bolsa está vacía</p>
@@ -139,7 +160,7 @@ const Navbar = () => {
                 <button className="w-full bg-primary text-primary-foreground rounded-lg py-2 text-sm font-semibold hover:bg-primary/90 transition-colors mb-3">
                   Iniciar Sesión
                 </button>
-                <p className="text-xs text-muted-foreground px-2 mb-1 font-semibold">Mi perfil</p>
+                <p className="text-xs text-muted-foreground px-2 mb-1 font-semibold uppercase tracking-wider">Mi perfil</p>
                 {dropdownLink("/perfil/pedidos", "Pedidos")}
                 {dropdownLink("/perfil/favoritos", "Favoritos")}
                 {dropdownLink("/perfil/cuenta", "Cuenta")}
@@ -148,9 +169,8 @@ const Navbar = () => {
           </DropdownWrapper>
         </div>
 
-        {/* Replace label-less dropdown triggers with icons */}
         {/* Mobile toggle */}
-        <button className="lg:hidden text-foreground ml-auto" onClick={() => setMobileOpen(!mobileOpen)}>
+        <button className="lg:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -160,19 +180,19 @@ const Navbar = () => {
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="lg:hidden bg-background/95 backdrop-blur-xl border-b border-border px-6 pb-6 flex flex-col gap-3"
+          className="lg:hidden bg-background/95 backdrop-blur-xl border-b border-border px-6 pb-6 flex flex-col gap-1"
         >
-          <p className="text-xs text-muted-foreground uppercase tracking-wider mt-2">Productos</p>
+          <p className="text-xs text-muted-foreground uppercase tracking-wider mt-3 mb-1 px-3">Productos</p>
           {dropdownLink("/productos/padel", "Pádel")}
           {dropdownLink("/productos/boxeo", "Boxeo")}
           {dropdownLink("/productos/proximamente", "Próximamente")}
-          <Link to="/app" onClick={() => setMobileOpen(false)} className="text-sm text-muted-foreground hover:text-foreground px-3 py-2">App</Link>
-          <p className="text-xs text-muted-foreground uppercase tracking-wider">Suscripción</p>
+          <Link to="/app" onClick={() => setMobileOpen(false)} className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground">App</Link>
+          <p className="text-xs text-muted-foreground uppercase tracking-wider mt-2 mb-1 px-3">Suscripción</p>
           {dropdownLink("/suscripcion/padel", "Pádel")}
           {dropdownLink("/suscripcion/boxeo", "Boxeo")}
-          <Link to="/unete" onClick={() => setMobileOpen(false)} className="text-sm text-muted-foreground hover:text-foreground px-3 py-2">Únete al movimiento</Link>
-          <Link to="/conocenos" onClick={() => setMobileOpen(false)} className="text-sm text-muted-foreground hover:text-foreground px-3 py-2">Conócenos</Link>
-          <Link to="/soporte" onClick={() => setMobileOpen(false)} className="text-sm text-muted-foreground hover:text-foreground px-3 py-2">Soporte</Link>
+          <Link to="/unete" onClick={() => setMobileOpen(false)} className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground">Únete al movimiento</Link>
+          <Link to="/conocenos" onClick={() => setMobileOpen(false)} className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground">Conócenos</Link>
+          <Link to="/soporte" onClick={() => setMobileOpen(false)} className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground">Soporte</Link>
         </motion.div>
       )}
     </motion.nav>
