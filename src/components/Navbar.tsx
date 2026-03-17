@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, User, ShoppingBag, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
-import kynetikLogo from "@/assets/kynetik-logo.png";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -60,7 +59,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-16">
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">
-          <img src={kynetikLogo} alt="Kynetik" className="h-8 w-auto" />
+          <span className="font-display text-xl font-bold text-foreground">Kynetik</span>
         </Link>
 
         {/* Desktop nav - centered */}

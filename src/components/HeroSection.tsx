@@ -1,12 +1,11 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-padel.jpg";
 
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center overflow-hidden">
-    {/* Background image */}
+    {/* Background gradient */}
     <div className="absolute inset-0">
-      <img src={heroImage} alt="Jugadores de pádel en acción" className="w-full h-full object-cover" />
+      <div className="w-full h-full bg-gradient-to-br from-primary/20 via-background to-secondary/10" />
       <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
     </div>
 
