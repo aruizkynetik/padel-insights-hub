@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import heroImage from "@/assets/hero-product.png";
-import productDetail from "@/assets/product-detail.png";
 import { Zap, Target, BarChart3, Wifi, Battery, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -36,7 +34,9 @@ const ProductPadel = () => (
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.3 }}>
-            <img src={heroImage} alt="PadelTech sensor" className="w-full rounded-2xl animate-float" />
+            <div className="w-full aspect-square rounded-2xl bg-gradient-to-br from-primary/20 via-card to-primary/10 flex items-center justify-center border border-border animate-float">
+              <Zap className="w-24 h-24 text-primary/50" />
+            </div>
           </motion.div>
         </div>
       </section>
@@ -66,7 +66,9 @@ const ProductPadel = () => (
       {/* Product detail */}
       <section className="section-padding">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-          <motion.img initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} src={productDetail} alt="PadelTech detalle" className="w-full rounded-2xl" />
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="w-full aspect-[4/3] rounded-2xl bg-gradient-to-br from-card via-primary/5 to-card flex items-center justify-center border border-border">
+              <Target className="w-20 h-20 text-primary/40" />
+            </motion.div>
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-6">Diseñado para el Rendimiento</h2>
             <ul className="space-y-4 text-muted-foreground">

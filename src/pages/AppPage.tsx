@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import appPreview from "@/assets/app-preview.png";
 import { BarChart3, Activity, TrendingUp, Users, Bell, Shield, Smartphone } from "lucide-react";
 
 const dataPoints = [
@@ -28,7 +27,9 @@ const AppPage = () => (
             </p>
           </motion.div>
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.3 }}>
-            <img src={appPreview} alt="Kynetik App Preview" className="w-full rounded-2xl" />
+            <div className="w-full aspect-[9/16] max-w-sm mx-auto rounded-3xl bg-gradient-to-br from-card via-primary/5 to-card flex items-center justify-center border border-border">
+              <Smartphone className="w-16 h-16 text-primary/40" />
+            </div>
           </motion.div>
         </div>
       </section>

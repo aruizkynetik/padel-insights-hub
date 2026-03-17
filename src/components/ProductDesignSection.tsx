@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { Feather, Shield, Plug, BatteryFull, Wifi } from "lucide-react";
-import productImage from "@/assets/product-detail.png";
+import { Feather, Shield, Plug, BatteryFull, Wifi, Box } from "lucide-react";
 
 const specs = [
   { icon: Feather, label: "Ultraligero", value: "Solo 8 gramos" },
@@ -43,11 +42,9 @@ const ProductDesignSection = () => (
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <img
-          src={productImage}
-          alt="Detalle del sensor PadelSense"
-          className="w-full max-w-md mx-auto rounded-2xl"
-        />
+        <div className="w-full max-w-md mx-auto aspect-square rounded-2xl bg-gradient-to-br from-card via-primary/5 to-card flex items-center justify-center border border-border">
+          <Box className="w-20 h-20 text-primary/40" />
+        </div>
       </motion.div>
     </div>
   </section>

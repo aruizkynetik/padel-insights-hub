@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import appPreview from "@/assets/app-preview.png";
+import { Smartphone } from "lucide-react";
 
 const AppPreviewSection = () => (
   <section id="app" className="section-padding">
@@ -11,11 +11,9 @@ const AppPreviewSection = () => (
         transition={{ duration: 0.6 }}
         className="order-2 lg:order-1"
       >
-        <img
-          src={appPreview}
-          alt="App complementaria de Kynetik mostrando el dashboard de rendimiento"
-          className="w-full max-w-sm mx-auto rounded-2xl"
-        />
+        <div className="w-full max-w-sm mx-auto aspect-[9/16] rounded-3xl bg-gradient-to-br from-card via-primary/5 to-card flex items-center justify-center border border-border">
+          <Smartphone className="w-16 h-16 text-primary/40" />
+        </div>
       </motion.div>
 
       <motion.div

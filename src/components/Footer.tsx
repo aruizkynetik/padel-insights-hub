@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import kynetikLogo from "@/assets/kynetik-logo.png";
 
 const Footer = () => (
   <footer className="border-t border-border bg-card/50 py-12 px-6">
@@ -7,7 +6,7 @@ const Footer = () => (
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
         <div>
           <Link to="/" className="inline-block mb-3">
-            <img src={kynetikLogo} alt="Kynetik" className="h-8 w-auto" />
+            <span className="font-display text-xl font-bold text-foreground">Kynetik</span>
           </Link>
           <p className="text-muted-foreground text-sm">
             Tecnología inteligente que revoluciona el entrenamiento deportivo con datos y analítica avanzada.
