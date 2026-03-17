@@ -57,14 +57,14 @@ const Navbar = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border"
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-16">
-        {/* Logo */}
-        <Link to="/" className="flex-shrink-0">
-          <img src={kynetikLogo} alt="Kynetik" className="h-8 w-auto" />
-        </Link>
-
-        {/* Desktop nav - centered */}
+      {/* Single centered bar with everything */}
+      <div className="flex items-center justify-center h-16">
         <div className="hidden lg:flex items-center gap-6">
+          {/* Logo */}
+          <Link to="/" className="flex-shrink-0 mr-2">
+            <img src={kynetikLogo} alt="Kynetik" className="h-6 w-auto" />
+          </Link>
+
           <DropdownWrapper
             name="productos"
             trigger={
@@ -95,32 +95,21 @@ const Navbar = () => {
           <Link to="/unete" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Únete al movimiento</Link>
           <Link to="/conocenos" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Conócenos</Link>
           <Link to="/soporte" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Soporte</Link>
-        </div>
 
-        {/* User & Cart icons */}
-        <div className="hidden lg:flex items-center gap-1">
           {/* User dropdown */}
           <DropdownWrapper
             name="user"
             align="right"
             trigger={
-              <button className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted">
+              <button className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted ml-2">
                 <User size={20} />
               </button>
             }
           >
             <div className="w-[280px] p-2">
               <h3 className="font-display text-sm font-semibold text-foreground mb-3 px-2">Iniciar Sesión</h3>
-              <input
-                type="email"
-                placeholder="Correo electrónico"
-                className="w-full bg-muted border border-border rounded-lg px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground mb-2"
-              />
-              <input
-                type="password"
-                placeholder="Contraseña"
-                className="w-full bg-muted border border-border rounded-lg px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground mb-2"
-              />
+              <input type="email" placeholder="Correo electrónico" className="w-full bg-muted border border-border rounded-lg px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground mb-2" />
+              <input type="password" placeholder="Contraseña" className="w-full bg-muted border border-border rounded-lg px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground mb-2" />
               <Link to="/recuperar-password" onClick={() => setActiveDropdown(null)} className="text-xs text-primary hover:underline block mb-3 px-1">
                 ¿Has olvidado tu contraseña?
               </Link>
@@ -169,10 +158,15 @@ const Navbar = () => {
           </DropdownWrapper>
         </div>
 
-        {/* Mobile toggle */}
-        <button className="lg:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile: logo left, hamburger right */}
+        <div className="lg:hidden flex items-center justify-between w-full px-6">
+          <Link to="/" className="flex-shrink-0">
+            <img src={kynetikLogo} alt="Kynetik" className="h-6 w-auto" />
+          </Link>
+          <button className="text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
