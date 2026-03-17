@@ -18,7 +18,7 @@ const Index = () => (
 
     {/* Products overview */}
     <section id="descubre" className="section-padding">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-5xl mx-auto px-8 md:px-16">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
           <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-3">Nuestros Productos</p>
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">Tecnología Para Cada Deporte</h2>
