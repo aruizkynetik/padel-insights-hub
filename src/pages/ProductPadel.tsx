@@ -100,14 +100,24 @@ const ProductPadel = () => (
         </div>
       </section>
 
-      {/* Product render image */}
+      {/* Product showcase — full width dramatic image */}
+      <section className="relative w-full">
+        <img src={showcaseImage} alt="PadelTech dispositivo" className="w-full h-[60vh] object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 pb-12">
+          <div className="max-w-5xl mx-auto px-8">
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              className="font-display text-3xl md:text-5xl font-bold text-white drop-shadow-lg">
+              Diseñado para Desaparecer
+            </motion.h2>
+          </div>
+        </div>
+      </section>
+
+      {/* Product details with detail image */}
       <section className="section-padding">
         <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
-            <img src={renderImage} alt="PadelTech render del dispositivo" className="w-full max-w-md mx-auto" />
-          </motion.div>
-          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-6">Diseñado para Desaparecer</h2>
+          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Fabricado en silicona de grado deportivo, el PadelTech se integra de forma discreta en tu pala. Su acabado totalmente negro con grabado en relieve "Padel Tech" refleja una estética minimalista y profesional.
             </p>
@@ -117,6 +127,9 @@ const ProductPadel = () => (
               <li className="flex items-start gap-3"><span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />Sistema de fijación universal compatible con todas las palas.</li>
               <li className="flex items-start gap-3"><span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />Sin batería: autoalimentado por energy harvesting.</li>
             </ul>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
+            <img src={detailImage} alt="PadelTech detalle macro" className="w-full rounded-2xl" />
           </motion.div>
         </div>
       </section>
