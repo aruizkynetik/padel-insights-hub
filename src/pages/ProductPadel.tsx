@@ -58,17 +58,15 @@ const ProductPadel = () => (
   <>
     <Navbar />
     <main className="pt-20">
-      {/* Hero — full width image */}
-      <ScrollCropImage src={heroImage} alt="PadelTech — Pala de pádel Kynetik" className="mt-4" />
-
-      {/* Intro */}
-      <section className="section-padding">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
-            <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-4">Producto Estrella</p>
-            <h1 className="font-display text-4xl md:text-6xl font-bold leading-tight mb-6">PadelTech</h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              El dispositivo inteligente que se integra en tu pala de pádel y transforma cada golpe en datos accionables. Entrena con precisión, compite con inteligencia.
+      {/* Hero — full width image with text overlay */}
+      <section className="relative w-full">
+        <img src={heroImage} alt="PadelTech — Pala de pádel Kynetik" className="w-full h-[70vh] object-cover" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <p className="font-display text-sm font-semibold tracking-widest uppercase mb-4 text-white/80">Producto Estrella</p>
+            <h1 className="font-display text-5xl md:text-7xl font-bold leading-tight mb-4 text-white drop-shadow-lg">PadelTech</h1>
+            <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8 drop-shadow-md">
+              Cada golpe cuenta. Cada dato te acerca a tu mejor versión.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button variant="hero" size="lg">Comprar Ahora</Button>
