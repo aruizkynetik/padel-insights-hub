@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 
 const specRows = [
-  { label: "Peso", value: "8 gramos" },
+  { label: "Peso", value: "10 gramos" },
   { label: "Dimensiones", value: "32 × 24 × 10 mm" },
+  { label: "Alimentación", value: "Energy Harvesting (sin batería)" },
   { label: "Conectividad", value: "Bluetooth 5.3 LE" },
-  { label: "Batería", value: "Li-Po recargable, 20+ horas" },
-  { label: "Carga", value: "USB-C, 1h carga completa" },
   { label: "Sensores", value: "IMU 9 ejes (acelerómetro, giroscopio, magnetómetro)" },
-  { label: "Resistencia al Agua", value: "IP67" },
+  { label: "Resistencia", value: "IP67 — impactos, vibraciones, líquidos" },
+  { label: "Material", value: "Silicona de grado deportivo" },
   { label: "Compatibilidad", value: "Todas las palas de pádel estándar" },
   { label: "Soporte de App", value: "iOS 15+ / Android 12+" },
 ];
@@ -23,9 +23,7 @@ const TechSpecsSection = () => (
         className="text-center mb-16"
       >
         <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-3">Especificaciones</p>
-        <h2 className="font-display text-3xl md:text-5xl font-bold">
-          Bajo el Capó
-        </h2>
+        <h2 className="font-display text-3xl md:text-5xl font-bold">Bajo el Capó</h2>
       </motion.div>
 
       <motion.div
