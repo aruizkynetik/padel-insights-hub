@@ -3,10 +3,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TechSpecsSection from "@/components/TechSpecsSection";
 import heroImage from "@/assets/padeltech-hero.jpg";
-import renderImage from "@/assets/padeltech-render.png";
+import showcaseImage from "@/assets/padeltech-showcase.jpg";
+import detailImage from "@/assets/padeltech-detail.jpg";
 import { Zap, Bluetooth, Shield, Feather, Crosshair, Gauge, TriangleRight, Footprints } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import ScrollCropImage from "@/components/ScrollCropImage";
 
 const features = [
   {
