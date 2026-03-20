@@ -2,43 +2,41 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import appPreview from "@/assets/app-preview.png";
-import { BarChart3, Activity, TrendingUp, Users, Bell, Shield, Smartphone } from "lucide-react";
+import { BarChart3, Activity, TrendingUp, Zap, Bell, Shield, Smartphone } from "lucide-react";
 
 const dataPoints = [
-  { icon: BarChart3, title: "Dashboard de Rendimiento", desc: "Vista general con métricas clave: golpes totales, potencia media, mejora semanal y puntuación global." },
-  { icon: Activity, title: "Análisis por Sesión", desc: "Desglose detallado de cada entrenamiento: duración, intensidad, tipos de golpe y zonas de impacto." },
-  { icon: TrendingUp, title: "Progreso Histórico", desc: "Gráficos de evolución a lo largo del tiempo. Compara semanas, meses y temporadas." },
-  { icon: Users, title: "Comparativa Social", desc: "Compárate con otros jugadores de tu nivel y descubre áreas de mejora." },
-  { icon: Bell, title: "Alertas Inteligentes", desc: "Notificaciones personalizadas sobre objetivos alcanzados, rachas y recomendaciones." },
+  { icon: BarChart3, title: "Dashboard de Rendimiento", desc: "Métricas clave de boxeo: golpes totales, potencia máxima y media, frecuencia de combinaciones y puntuación global." },
+  { icon: Activity, title: "Análisis por Sesión", desc: "Desglose de cada sesión: jab, cross, hook, uppercut. Velocidad de ejecución, cadencia y tiempo de reacción." },
+  { icon: TrendingUp, title: "Progreso Histórico", desc: "Evolución de tu potencia, velocidad y resistencia a lo largo del tiempo con gráficos comparativos." },
+  { icon: Zap, title: "Análisis de Potencia", desc: "Medición en tiempo real de la fuerza de impacto en cada golpe. Identifica tu golpe más potente y tus puntos débiles." },
+  { icon: Bell, title: "Alertas Inteligentes", desc: "Objetivos de entrenamiento, alertas de sobreentrenamiento y recomendaciones de descanso basadas en datos." },
   { icon: Shield, title: "Datos Seguros", desc: "Tu información encriptada y protegida. Cumplimiento RGPD garantizado." },
 ];
 
-const AppPage = () => (
+const AppBoxeo = () => (
   <>
     <Navbar />
     <main className="pt-20">
-      {/* Hero */}
       <section className="section-padding">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }}>
-            <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-4">Aplicación Móvil</p>
-            <h1 className="font-display text-4xl md:text-6xl font-bold leading-tight mb-6">Tu Entrenador en el Bolsillo</h1>
+            <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-4">App Boxeo</p>
+            <h1 className="font-display text-4xl md:text-6xl font-bold leading-tight mb-6">Tu Esquina Inteligente</h1>
             <p className="text-lg text-muted-foreground max-w-lg mb-8">
-              La app Kynetik transforma los datos de tus sensores en información visual y accionable. Disponible para iOS y Android.
+              La app Kynetik para BoxTech analiza cada golpe, combinación y sesión. Potencia, velocidad y técnica en la palma de tu mano.
             </p>
           </motion.div>
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.3 }}>
-            <img src={appPreview} alt="Kynetik App Preview" className="w-full rounded-2xl" />
+            <img src={appPreview} alt="Kynetik App Boxeo Preview" className="w-full rounded-2xl" />
           </motion.div>
         </div>
       </section>
 
-      {/* Data points */}
       <section className="section-padding bg-card/30">
         <div className="max-w-7xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
             <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-3">Funcionalidades</p>
-            <h2 className="font-display text-3xl md:text-5xl font-bold">Todo lo que Necesitas</h2>
+            <h2 className="font-display text-3xl md:text-5xl font-bold">Todo lo que Necesitas para el Boxeo</h2>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {dataPoints.map((f, i) => (
@@ -55,7 +53,6 @@ const AppPage = () => (
         </div>
       </section>
 
-      {/* QR Download */}
       <section className="section-padding">
         <div className="max-w-xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -94,4 +91,4 @@ const AppPage = () => (
   </>
 );
 
-export default AppPage;
+export default AppBoxeo;

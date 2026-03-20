@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, User, ShoppingBag, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
-import kynetikLogo from "@/assets/kynetik-logo-horizontal.png";
+import kynetikIcon from "@/assets/kynetik-icon.png";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -59,12 +59,10 @@ const Navbar = () => {
     >
       <div className="flex items-center justify-center h-16">
         <div className="hidden lg:flex items-center gap-6">
-          {/* Logo — far left */}
           <Link to="/" className="flex-shrink-0 mr-4">
-            <img src={kynetikLogo} alt="Kynetik" className="h-5 w-auto" />
+            <img src={kynetikIcon} alt="Kynetik" className="h-8 w-auto" />
           </Link>
 
-          {/* Center nav links */}
           <DropdownWrapper
             name="productos"
             trigger={
@@ -78,7 +76,17 @@ const Navbar = () => {
             {dropdownLink("/productos/proximamente", "Próximamente")}
           </DropdownWrapper>
 
-          <Link to="/app" className="text-sm text-muted-foreground hover:text-foreground transition-colors">App</Link>
+          <DropdownWrapper
+            name="app"
+            trigger={
+              <button className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                App <ChevronDown size={14} className={`transition-transform ${activeDropdown === "app" ? "rotate-180" : ""}`} />
+              </button>
+            }
+          >
+            {dropdownLink("/app/padel", "Pádel")}
+            {dropdownLink("/app/boxeo", "Boxeo")}
+          </DropdownWrapper>
 
           <DropdownWrapper
             name="suscripcion"
@@ -95,7 +103,6 @@ const Navbar = () => {
           <Link to="/conocenos" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Conócenos</Link>
           <Link to="/soporte" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Soporte</Link>
 
-          {/* Right group: Únete + user + cart */}
           <div className="flex items-center gap-3 ml-4">
             <Link
               to="/unete"
@@ -104,7 +111,6 @@ const Navbar = () => {
               Únete al movimiento
             </Link>
 
-            {/* User dropdown */}
             <DropdownWrapper
               name="user"
               align="right"
@@ -140,7 +146,6 @@ const Navbar = () => {
               </div>
             </DropdownWrapper>
 
-            {/* Cart dropdown */}
             <DropdownWrapper
               name="cart"
               align="right"
@@ -170,7 +175,7 @@ const Navbar = () => {
         {/* Mobile */}
         <div className="lg:hidden flex items-center justify-between w-full px-6">
           <Link to="/" className="flex-shrink-0">
-            <img src={kynetikLogo} alt="Kynetik" className="h-5 w-auto" />
+            <img src={kynetikIcon} alt="Kynetik" className="h-8 w-auto" />
           </Link>
           <button className="text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -178,7 +183,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {mobileOpen && (
         <motion.div
           initial={{ opacity: 0, y: -10 }}
@@ -189,7 +193,9 @@ const Navbar = () => {
           {dropdownLink("/productos/padel", "Pádel")}
           {dropdownLink("/productos/boxeo", "Boxeo")}
           {dropdownLink("/productos/proximamente", "Próximamente")}
-          <Link to="/app" onClick={() => setMobileOpen(false)} className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground">App</Link>
+          <p className="text-xs text-muted-foreground uppercase tracking-wider mt-2 mb-1 px-3">App</p>
+          {dropdownLink("/app/padel", "Pádel")}
+          {dropdownLink("/app/boxeo", "Boxeo")}
           <p className="text-xs text-muted-foreground uppercase tracking-wider mt-2 mb-1 px-3">Suscripción</p>
           {dropdownLink("/suscripcion/padel", "Pádel")}
           {dropdownLink("/suscripcion/boxeo", "Boxeo")}

@@ -8,7 +8,8 @@ import NotFound from "./pages/NotFound";
 import ProductPadel from "./pages/ProductPadel";
 import ProductBoxeo from "./pages/ProductBoxeo";
 import ProductComingSoon from "./pages/ProductComingSoon";
-import AppPage from "./pages/AppPage";
+import AppPadel from "./pages/AppPadel";
+import AppBoxeo from "./pages/AppBoxeo";
 import SubscriptionPadel from "./pages/SubscriptionPadel";
 import SubscriptionBoxeo from "./pages/SubscriptionBoxeo";
 import JoinMovement from "./pages/JoinMovement";
@@ -28,7 +29,9 @@ const App = () => (
           <Route path="/productos/padel" element={<ProductPadel />} />
           <Route path="/productos/boxeo" element={<ProductBoxeo />} />
           <Route path="/productos/proximamente" element={<ProductComingSoon />} />
-          <Route path="/app" element={<AppPage />} />
+          <Route path="/app" element={<AppPadel />} />
+          <Route path="/app/padel" element={<AppPadel />} />
+          <Route path="/app/boxeo" element={<AppBoxeo />} />
           <Route path="/suscripcion/padel" element={<SubscriptionPadel />} />
           <Route path="/suscripcion/boxeo" element={<SubscriptionBoxeo />} />
           <Route path="/unete" element={<JoinMovement />} />

@@ -10,13 +10,12 @@ const HeroSection = () => {
     offset: ["start start", "end start"],
   });
 
-  const clipInset = useTransform(scrollYProgress, [0.2, 0.8], [0, 6]);
-  const borderRadius = useTransform(clipInset, (v) => `${v * 2.5}px`);
+  const clipInset = useTransform(scrollYProgress, [0.2, 0.8], [0, 8]);
+  const borderRadius = useTransform(clipInset, (v) => `${v * 3}px`);
   const marginX = useTransform(clipInset, (v) => `${v}%`);
 
   return (
     <section ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Full-width background that crops on scroll */}
       <motion.div
         className="absolute inset-0 overflow-hidden"
         style={{
