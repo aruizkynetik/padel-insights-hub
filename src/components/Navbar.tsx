@@ -60,7 +60,7 @@ const Navbar = () => {
       <div className="flex items-center justify-center h-16">
         <div className="hidden lg:flex items-center gap-6">
           <Link to="/" className="flex-shrink-0 mr-4">
-            <img src={kynetikIcon} alt="Kynetik" className="h-8 w-auto" />
+            <img src={kynetikIcon} alt="Kynetik" className="h-6 w-auto" />
           </Link>
 
           <DropdownWrapper
