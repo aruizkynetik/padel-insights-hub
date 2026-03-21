@@ -10,18 +10,14 @@ const HeroSection = () => {
     offset: ["start start", "end start"],
   });
 
-  const marginPercent = useTransform(scrollYProgress, [0.2, 0.8], [0, 17]);
-  const borderRadius = useTransform(marginPercent, (v) => `${v * 1.4}px`);
+  const cropPercent = useTransform(scrollYProgress, [0.2, 0.8], [0, 17]);
 
   return (
     <section ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden">
       <motion.div
-        className="absolute inset-0 overflow-hidden"
+        className="absolute inset-0"
         style={{
-          marginLeft: useTransform(marginPercent, (v) => `${v}%`),
-          marginRight: useTransform(marginPercent, (v) => `${v}%`),
-          width: useTransform(marginPercent, (v) => `${100 - v * 2}%`),
-          borderRadius,
+          clipPath: useTransform(cropPercent, (v) => `inset(0 ${v}% 0 ${v}% round ${v * 1.4}px)`),
         }}
       >
         <img src={heroImage} alt="Jugadores de pádel en acción" className="w-full h-full object-cover" />
