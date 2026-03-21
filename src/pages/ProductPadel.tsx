@@ -104,6 +104,7 @@ const ProductPadel = () => (
       {/* Hero */}
       <section className="relative w-full">
         <img src={heroImage} alt="PadelTech — Pala de pádel Kynetik" className="w-full h-[70vh] object-cover" />
+        <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <p className="font-display text-sm font-semibold tracking-widest uppercase mb-4 text-white/80">Producto Estrella</p>
