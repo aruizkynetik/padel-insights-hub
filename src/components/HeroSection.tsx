@@ -10,17 +10,17 @@ const HeroSection = () => {
     offset: ["start start", "end start"],
   });
 
-  const clipInset = useTransform(scrollYProgress, [0.2, 0.8], [0, 8]);
-  const borderRadius = useTransform(clipInset, (v) => `${v * 3}px`);
-  const marginX = useTransform(clipInset, (v) => `${v}%`);
+  const marginPercent = useTransform(scrollYProgress, [0.2, 0.8], [0, 17]);
+  const borderRadius = useTransform(marginPercent, (v) => `${v * 1.4}px`);
 
   return (
     <section ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden">
       <motion.div
         className="absolute inset-0 overflow-hidden"
         style={{
-          marginLeft: marginX,
-          marginRight: marginX,
+          marginLeft: useTransform(marginPercent, (v) => `${v}%`),
+          marginRight: useTransform(marginPercent, (v) => `${v}%`),
+          width: useTransform(marginPercent, (v) => `${100 - v * 2}%`),
           borderRadius,
         }}
       >

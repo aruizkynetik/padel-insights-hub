@@ -15,17 +15,18 @@ const ScrollCropImage = ({ src, alt, className = "", children }: ScrollCropImage
     offset: ["start end", "end start"],
   });
 
-  // Margins grow from 0 to ~8% matching text content margins
-  const clipInset = useTransform(scrollYProgress, [0.2, 0.7], [0, 8]);
+  // From 0% to 17% margin on each side → 100% to 66% width, centered
+  const marginPercent = useTransform(scrollYProgress, [0.2, 0.7], [0, 17]);
   const borderRadius = useTransform(scrollYProgress, [0.2, 0.7], [0, 24]);
 
   return (
-    <div ref={ref} className={`relative w-full ${className}`}>
+    <div ref={ref} className={`relative w-full overflow-hidden ${className}`}>
       <motion.div
-        className="w-full overflow-hidden relative"
+        className="w-full h-full overflow-hidden relative"
         style={{
-          marginLeft: useTransform(clipInset, (v) => `${v}%`),
-          marginRight: useTransform(clipInset, (v) => `${v}%`),
+          marginLeft: useTransform(marginPercent, (v) => `${v}%`),
+          marginRight: useTransform(marginPercent, (v) => `${v}%`),
+          width: useTransform(marginPercent, (v) => `${100 - v * 2}%`),
           borderRadius: useTransform(borderRadius, (v) => `${v}px`),
         }}
       >

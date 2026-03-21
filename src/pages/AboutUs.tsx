@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Target, Eye, Heart, Linkedin } from "lucide-react";
+import ScrollCropImage from "@/components/ScrollCropImage";
+import { Linkedin } from "lucide-react";
 
 import aitorImg from "@/assets/team/aitor.jpg";
 import carlosPImg from "@/assets/team/carlos-p.jpg";
@@ -13,12 +14,9 @@ import diegoImg from "@/assets/team/diego.jpg";
 import angelImg from "@/assets/team/angel.jpg";
 import alexImg from "@/assets/team/alex.jpg";
 import arnauImg from "@/assets/team/arnau.jpg";
-
-const mvv = [
-  { icon: Target, title: "Misión", text: "Democratizar el acceso a la tecnología deportiva de alto rendimiento, ofreciendo herramientas inteligentes que permitan a cualquier deportista mejorar su técnica mediante datos objetivos y análisis avanzado." },
-  { icon: Eye, title: "Visión", text: "Convertirnos en la plataforma de referencia mundial en tecnología wearable para deportes de raqueta y contacto, liderando la transformación digital del entrenamiento deportivo." },
-  { icon: Heart, title: "Valores", text: "Innovación constante, accesibilidad para todos los niveles, rigor científico en el análisis de datos, compromiso con la comunidad deportiva y sostenibilidad en nuestros procesos de fabricación." },
-];
+import missionImg from "@/assets/about-mission.jpg";
+import visionImg from "@/assets/about-vision.jpg";
+import valuesImg from "@/assets/about-values.jpg";
 
 const team = [
   { name: "Aitor Turegano", role: "CEO & Co-Founder", desc: "Lidera la visión estratégica y el crecimiento de Kynetik.", img: aitorImg, linkedin: "#" },
@@ -37,6 +35,7 @@ const AboutUs = () => (
   <>
     <Navbar />
     <main className="pt-20">
+      {/* Intro */}
       <section className="section-padding">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-16">
@@ -54,21 +53,62 @@ const AboutUs = () => (
               <p>Hoy, Kynetik cuenta con dos productos en desarrollo — PadelTech y BoxTech — y un ambicioso roadmap que incluye expansión a nuevos deportes, análisis con inteligencia artificial y una comunidad global de deportistas conectados por los datos.</p>
             </div>
           </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-24">
-            {mvv.map((item, i) => (
-              <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }}
-                className="bg-card border border-border rounded-2xl p-6 text-center hover:border-primary/30 transition-colors">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="text-primary" size={28} />
-                </div>
-                <h3 className="font-display text-xl font-bold mb-3">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.text}</p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
+
+      {/* Misión */}
+      <ScrollCropImage src={missionImg} alt="Misión Kynetik" className="h-[60vh]">
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 flex items-center justify-start px-8 md:px-16">
+          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="max-w-xl">
+            <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-3">Misión</p>
+            <h2 className="font-display text-3xl md:text-5xl font-bold text-white drop-shadow-lg mb-4">
+              Democratizar la tecnología deportiva
+            </h2>
+            <p className="text-white/85 text-base md:text-lg leading-relaxed drop-shadow-md">
+              Nuestra misión es hacer accesible la tecnología de análisis deportivo de alto rendimiento a cualquier deportista, independientemente de su nivel. Creemos que los datos objetivos no deben ser un privilegio exclusivo de los profesionales, sino una herramienta al alcance de todos para transformar el esfuerzo en progreso medible y constante.
+            </p>
+          </motion.div>
+        </div>
+      </ScrollCropImage>
+
+      <div className="h-24" />
+
+      {/* Visión */}
+      <ScrollCropImage src={visionImg} alt="Visión Kynetik" className="h-[60vh]">
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 flex items-center justify-end px-8 md:px-16">
+          <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="max-w-xl text-right">
+            <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-3">Visión</p>
+            <h2 className="font-display text-3xl md:text-5xl font-bold text-white drop-shadow-lg mb-4">
+              Liderar la transformación digital del deporte
+            </h2>
+            <p className="text-white/85 text-base md:text-lg leading-relaxed drop-shadow-md">
+              Aspiramos a convertirnos en la plataforma de referencia mundial en tecnología wearable para deportes de raqueta y contacto. Visualizamos un ecosistema donde cada sesión de entrenamiento genera conocimiento, cada golpe se convierte en aprendizaje y cada deportista forma parte de una comunidad global conectada por la inteligencia de los datos.
+            </p>
+          </motion.div>
+        </div>
+      </ScrollCropImage>
+
+      <div className="h-24" />
+
+      {/* Valores */}
+      <ScrollCropImage src={valuesImg} alt="Valores Kynetik" className="h-[60vh]">
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 flex items-center justify-center text-center px-8">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-xl">
+            <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-3">Valores</p>
+            <h2 className="font-display text-3xl md:text-5xl font-bold text-white drop-shadow-lg mb-4">
+              Innovación, rigor y compromiso
+            </h2>
+            <p className="text-white/85 text-base md:text-lg leading-relaxed drop-shadow-md">
+              Innovación constante como motor de cada decisión. Rigor científico en el análisis y la interpretación de datos. Accesibilidad para todos los niveles deportivos. Compromiso genuino con la comunidad deportiva. Y sostenibilidad en nuestros procesos de diseño y fabricación, porque el futuro del deporte también depende de cómo lo construimos.
+            </p>
+          </motion.div>
+        </div>
+      </ScrollCropImage>
+
+      <div className="h-24" />
 
       {/* Team section */}
       <section className="section-padding bg-card/30">
