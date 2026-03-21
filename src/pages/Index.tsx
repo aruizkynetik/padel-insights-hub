@@ -67,6 +67,7 @@ const Index = () => (
 
     {/* Sport image — Measure quote */}
     <ScrollCropImage src={sportTech} alt="Tecnología deportiva" className="h-[60vh]">
+      <div className="absolute inset-0 bg-black/40" />
       <div className="absolute inset-0 flex items-center justify-end px-8 md:px-16">
         <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="max-w-lg text-right">
           <h2 className="font-display text-3xl md:text-5xl font-bold text-white drop-shadow-lg mb-4">
