@@ -175,7 +175,7 @@ const Navbar = () => {
         {/* Mobile */}
         <div className="lg:hidden flex items-center justify-between w-full px-6">
           <Link to="/" className="flex-shrink-0">
-            <img src={kynetikIcon} alt="Kynetik" className="h-8 w-auto" />
+            <img src={kynetikIcon} alt="Kynetik" className="h-6 w-auto" />
           </Link>
           <button className="text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
