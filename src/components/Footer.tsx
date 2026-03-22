@@ -10,7 +10,7 @@ const Footer = () => (
           <Link to="/" className="inline-block mb-3">
             <img src={kynetikLogoVertical} alt="Kynetik" className="h-20 w-auto" />
           </Link>
-          <p className="text-muted-foreground text-sm">
+          <p className="text-muted-foreground text-sm text-justify">
             Tecnología inteligente que revoluciona el entrenamiento deportivo con datos y analítica avanzada.
           </p>
         </div>
