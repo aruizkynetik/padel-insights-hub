@@ -56,7 +56,7 @@ const Footer = () => (
           <h4 className="font-display text-sm font-semibold text-foreground mb-3 uppercase tracking-wider">IDIOMA</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li><a href="#" className="hover:text-foreground transition-colors flex items-center gap-2"><span className="text-base">🇬🇧</span> English</a></li>
-            <li><a href="#" className="hover:text-foreground transition-colors flex items-center gap-2"><span className="text-base">🏴</span> Català</a></li>
+            <li><a href="#" className="hover:text-foreground transition-colors flex items-center gap-2"><img src={flagCatalan} alt="Català" className="w-5 h-auto" /> Català</a></li>
             <li><a href="#" className="hover:text-foreground transition-colors flex items-center gap-2"><span className="text-base">🇮🇹</span> Italiano</a></li>
             <li><a href="#" className="hover:text-foreground transition-colors flex items-center gap-2"><span className="text-base">🇫🇷</span> Français</a></li>
           </ul>

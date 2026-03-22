@@ -15,9 +15,10 @@ const ScrollCropImage = ({ src, alt, className = "", children }: ScrollCropImage
     offset: ["start end", "end start"],
   });
 
-  // Crop from 0% to 17% on each side via clip-path → image stays full size, edges get clipped
   const cropPercent = useTransform(scrollYProgress, [0.2, 0.7], [0, 17]);
-  const borderRadius = useTransform(scrollYProgress, [0.2, 0.7], [0, 24]);
+
+  // Inward padding so overlay text doesn't get clipped
+  const textPadding = useTransform(cropPercent, (v) => `${v}%`);
 
   return (
     <div ref={ref} className={`relative w-full ${className}`}>
@@ -28,7 +29,11 @@ const ScrollCropImage = ({ src, alt, className = "", children }: ScrollCropImage
         }}
       >
         <img src={src} alt={alt} className="w-full h-full object-cover" />
-        {children}
+        {children && (
+          <motion.div className="absolute inset-0" style={{ paddingLeft: textPadding, paddingRight: textPadding }}>
+            {children}
+          </motion.div>
+        )}
       </motion.div>
     </div>
   );
