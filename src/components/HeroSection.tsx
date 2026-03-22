@@ -24,21 +24,24 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
       </motion.div>
 
-      <div className="relative z-10 w-full max-w-5xl mx-auto px-8 md:px-16 py-32">
+      <motion.div
+        className="relative z-10 w-full max-w-5xl mx-auto px-8 md:px-16 py-32"
+        style={{ paddingLeft: useTransform(cropPercent, (v) => `max(2rem, ${v}%)`), paddingRight: useTransform(cropPercent, (v) => `max(2rem, ${v}%)`) }}
+      >
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="max-w-2xl"
         >
-          <p className="text-primary font-display text-sm font-semibold tracking-widest uppercase mb-4">
+          <p className="text-primary font-display text-xs font-semibold tracking-widest uppercase mb-4">
             Tecnología Deportiva Inteligente
           </p>
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-6">
+          <h1 className="font-display text-3xl md:text-5xl lg:text-6xl font-bold leading-[1.05] mb-6">
             Eleva tu Juego al{" "}
             <span className="gradient-text">Siguiente Nivel</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-lg mb-8">
+          <p className="text-base md:text-lg text-muted-foreground max-w-lg mb-8">
             Tecnología que entiende tu deporte. Datos que impulsan tu rendimiento. Entrena con inteligencia, juega con ventaja.
           </p>
           <div className="flex flex-wrap gap-4">
@@ -50,7 +53,7 @@ const HeroSection = () => {
             </Button>
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 };
