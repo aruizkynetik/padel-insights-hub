@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import kynetikLogoVertical from "@/assets/kynetik-logo-vertical.png";
+import flagCatalan from "@/assets/flag-catalan.png";
 
 const Footer = () => (
   <footer className="border-t border-border bg-card/50 py-12 px-6">
